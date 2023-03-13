@@ -33,9 +33,17 @@ const ImageUploader = (props: ImageUploaderProps) => {
     <>
       <div
         className={styles.imageUploader}
-        style={{ backgroundImage: `url('${uploadedBanner}')` }}
+        style={
+          uploadedBanner
+            ? { backgroundImage: `url('${uploadedBanner}')`, border: 'none' }
+            : undefined
+        }
         onClick={() => setVisible(true)}>
-        <FontAwesomeIcon icon={faImage} /> Add a banner
+        {!uploadedBanner && (
+          <>
+            <FontAwesomeIcon icon={faImage} /> Add a banner
+          </>
+        )}
         <input type="text" value={uploadedBanner} readOnly {...props} />
       </div>
       <Modal
