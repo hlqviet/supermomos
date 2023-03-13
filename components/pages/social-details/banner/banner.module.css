@@ -1,0 +1,14 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #14597a;
+  width: 100%;
+  height: 445px;
+  background-color: rgba(242, 242, 242, 0.1);
+  border: 1px dashed #f2f2f2;
+  border-radius: 0 64px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+}

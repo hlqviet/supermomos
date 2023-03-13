@@ -1,0 +1,12 @@
+.tag {
+  background-color: #f2f4f7;
+  border-radius: 1rem;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.selected {
+  color: #942f70;
+  background-color: #f9f5ff;
+}

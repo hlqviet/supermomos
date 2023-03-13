@@ -1,0 +1,13 @@
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: #333333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid #d0d5dd;
+}
+
+.modalHeader svg {
+  cursor: pointer;
+}

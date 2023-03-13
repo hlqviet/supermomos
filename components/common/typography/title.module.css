@@ -1,0 +1,12 @@
+.title {
+  color: #ffffff;
+  background-color: #942f70;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+}
+
+.level2 {
+  composes: title;
+  font-size: 3rem;
+  line-height: 3.75rem;
+}

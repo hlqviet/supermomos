@@ -1,0 +1,11 @@
+.tagSelector {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.tagInput {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}

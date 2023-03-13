@@ -1,0 +1,40 @@
+.imageUploader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #14597a;
+  width: 100%;
+  height: 445px;
+  background-color: rgba(242, 242, 242, 0.1);
+  border: 1px dashed #f2f2f2;
+  border-radius: 0 64px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.imageUploader svg {
+  margin-right: 0.5rem;
+}
+
+.imageUploader input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.bannerImagesContainer div {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.bannerImagesContainer div:hover {
+  opacity: 0.7;
+}
+
+.bannerImagesContainer div:not(:last-child) {
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,11 @@
+.navBar ul {
+  list-style: none;
+}
+
+.navBar ul li {
+  display: inline-block;
+}
+
+.navBar ul li:not(:first-child) {
+  margin-left: 3rem;
+}

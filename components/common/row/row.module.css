@@ -1,0 +1,8 @@
+.row {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.row:last-child {
+  padding-bottom: 0;
+}
