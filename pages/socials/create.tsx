@@ -1,5 +1,6 @@
 import { FormEventHandler } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import {
   faCalendar,
   faClock,
@@ -67,144 +68,152 @@ const CreateSocial = () => {
   }
 
   return (
-    <Layout>
-      <form onSubmit={handleSubmit}>
-        <Row>
-          <Column>
-            <Row>
-              <TitleInput name="title" required />
-            </Row>
-            <Row>
-              <Input
-                placeholder="Date"
-                startIcon={faCalendar}
-                style={{ marginRight: '1rem' }}
-                type="date"
-                name="date"
-                required
-              />
-              <Input
-                placeholder="Time"
-                startIcon={faClock}
-                type="time"
-                name="time"
-                required
-              />
-            </Row>
-            <Row>
-              <Input
-                placeholder="Venue"
-                variant="small"
-                startIcon={faLocationPin}
-                style={{ width: '100%' }}
-                name="venue"
-                required
-              />
-            </Row>
-            <Row>
-              <Input
-                placeholder="Max capacity"
-                variant="small"
-                startIcon={faUserGroup}
-                min={1}
-                style={{ marginRight: '1rem' }}
-                type="number"
-                name="capacity"
-                required
-              />
-              <Input
-                placeholder="Cost per person"
-                variant="small"
-                startIcon={faDollarSign}
-                min={0}
-                type="number"
-                name="price"
-              />
-            </Row>
-          </Column>
-          <Column>
-            <ImageUploader name="banner" required />
-          </Column>
-        </Row>
-        <Row>
-          <Column>
-            <Row>
-              <Label htmlFor="description">Description</Label>
-            </Row>
-            <Row>
-              <TextArea
-                placeholder="Description of your event"
-                style={{ width: '100%' }}
-                name="description"
-                id="description"
-                required
-              />
-            </Row>
-            <Row>
-              <Card style={{ width: '100%' }}>
-                <Row>
-                  <Subtitle style={{ display: 'inline-block' }}>
-                    Settings
-                  </Subtitle>
-                </Row>
-                <Row>
-                  <Label htmlFor="isManualApprove">
-                    <Checkbox name="isManualApprove" id="isManualApprove" />I
-                    want to approve attendees
-                  </Label>
-                </Row>
-                <Row style={{ display: 'block' }}>
+    <>
+      <Head>
+        <title>Create Social - Supermomos</title>
+      </Head>
+      <Layout>
+        <form onSubmit={handleSubmit}>
+          <Row>
+            <Column>
+              <Row>
+                <TitleInput name="title" id="title" required />
+                <Label hidden htmlFor="title">
+                  Title
+                </Label>
+              </Row>
+              <Row>
+                <Input
+                  placeholder="Date"
+                  startIcon={faCalendar}
+                  style={{ marginRight: '1rem' }}
+                  type="date"
+                  name="date"
+                  required
+                />
+                <Input
+                  placeholder="Time"
+                  startIcon={faClock}
+                  type="time"
+                  name="time"
+                  required
+                />
+              </Row>
+              <Row>
+                <Input
+                  placeholder="Venue"
+                  variant="small"
+                  startIcon={faLocationPin}
+                  style={{ width: '100%' }}
+                  name="venue"
+                  required
+                />
+              </Row>
+              <Row>
+                <Input
+                  placeholder="Max capacity"
+                  variant="small"
+                  startIcon={faUserGroup}
+                  min={1}
+                  style={{ marginRight: '1rem' }}
+                  type="number"
+                  name="capacity"
+                  required
+                />
+                <Input
+                  placeholder="Cost per person"
+                  variant="small"
+                  startIcon={faDollarSign}
+                  min={0}
+                  type="number"
+                  name="price"
+                />
+              </Row>
+            </Column>
+            <Column>
+              <ImageUploader name="banner" required />
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <Row>
+                <Label htmlFor="description">Description</Label>
+              </Row>
+              <Row>
+                <TextArea
+                  placeholder="Description of your event"
+                  style={{ width: '100%' }}
+                  name="description"
+                  id="description"
+                  required
+                />
+              </Row>
+              <Row>
+                <Card style={{ width: '100%' }}>
                   <Row>
-                    <Label htmlFor="privacy">Privacy</Label>
+                    <Subtitle style={{ display: 'inline-block' }}>
+                      Settings
+                    </Subtitle>
                   </Row>
                   <Row>
-                    <Radio.Group id="privacy">
-                      <Label>
-                        <Radio name="privacy" value="Public" />
-                        Public
-                      </Label>
-                      <Label>
-                        <Radio name="privacy" value="Curated Audience" />
-                        Curated Audience
-                      </Label>
-                      <Label>
-                        <Radio name="privacy" value="Community Only" />
-                        Community Only
-                      </Label>
-                    </Radio.Group>
+                    <Label htmlFor="isManualApprove">
+                      <Checkbox name="isManualApprove" id="isManualApprove" />I
+                      want to approve attendees
+                    </Label>
                   </Row>
-                </Row>
-                <Row style={{ display: 'block' }}>
-                  <Row>
-                    <Label>Tag your social</Label>
+                  <Row style={{ display: 'block' }}>
+                    <Row>
+                      <Label htmlFor="privacy">Privacy</Label>
+                    </Row>
+                    <Row>
+                      <Radio.Group id="privacy">
+                        <Label>
+                          <Radio name="privacy" value="Public" />
+                          Public
+                        </Label>
+                        <Label>
+                          <Radio name="privacy" value="Curated Audience" />
+                          Curated Audience
+                        </Label>
+                        <Label>
+                          <Radio name="privacy" value="Community Only" />
+                          Community Only
+                        </Label>
+                      </Radio.Group>
+                    </Row>
                   </Row>
-                  <Row>
-                    <span style={{ color: '#475467' }}>
-                      Pick tags for our curation engine to work its magin
-                    </span>
+                  <Row style={{ display: 'block' }}>
+                    <Row>
+                      <Label>Tag your social</Label>
+                    </Row>
+                    <Row>
+                      <span style={{ color: '#475467' }}>
+                        Pick tags for our curation engine to work its magin
+                      </span>
+                    </Row>
+                    <Row>
+                      <TagSelector
+                        name="tags"
+                        required
+                        tags={['Engineering', 'Product', 'Marketing', 'Design']}
+                      />
+                    </Row>
                   </Row>
-                  <Row>
-                    <TagSelector
-                      name="tags"
-                      required
-                      tags={['Engineering', 'Product', 'Marketing', 'Design']}
-                    />
-                  </Row>
-                </Row>
-              </Card>
-            </Row>
-            <Row>
-              <Button
-                htmlType="submit"
-                type="primary"
-                style={{ textTransform: 'uppercase', width: '100%' }}>
-                Create Social
-              </Button>
-            </Row>
-          </Column>
-        </Row>
-      </form>
-    </Layout>
+                </Card>
+              </Row>
+              <Row>
+                <Button
+                  htmlType="submit"
+                  type="primary"
+                  style={{ textTransform: 'uppercase', width: '100%' }}>
+                  Create Social
+                </Button>
+              </Row>
+            </Column>
+          </Row>
+        </form>
+      </Layout>
+    </>
   )
 }
 

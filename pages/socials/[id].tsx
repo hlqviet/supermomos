@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import { format, parseISO } from 'date-fns/fp'
 import {
   faCalendar,
@@ -35,46 +36,51 @@ const SocialDetails = () => {
   const { title, banner, startAt, venue, capacity, price, description } = data
 
   return (
-    <Layout>
-      <Row>
-        <Column>
-          <Title>{title}</Title>
-        </Column>
-        <Column>
-          <Banner url={banner} />
-        </Column>
-      </Row>
-      <Row>
-        <Column>
-          <Row>
-            <Column>
-              <Text size="large" startIcon={faCalendar}>
-                {format('PPP')(parseISO(startAt))}
+    <>
+      <Head>
+        <title>Social Details - {title} - Supermomos</title>
+      </Head>
+      <Layout>
+        <Row>
+          <Column>
+            <Title>{title}</Title>
+          </Column>
+          <Column>
+            <Banner url={banner} />
+          </Column>
+        </Row>
+        <Row>
+          <Column>
+            <Row>
+              <Column>
+                <Text size="large" startIcon={faCalendar}>
+                  {format('PPP')(parseISO(startAt))}
+                </Text>
+              </Column>
+              <Column>
+                <Text size="large" startIcon={faClock}>
+                  {format('p')(parseISO(startAt))}
+                </Text>
+              </Column>
+            </Row>
+            <Row>
+              <Text startIcon={faLocationPin}>{venue}</Text>
+            </Row>
+            <Row>
+              <Text startIcon={faUserGroup} style={{ marginRight: '2rem' }}>
+                {capacity} people
               </Text>
-            </Column>
-            <Column>
-              <Text size="large" startIcon={faClock}>
-                {format('p')(parseISO(startAt))}
-              </Text>
-            </Column>
-          </Row>
-          <Row>
-            <Text startIcon={faLocationPin}>{venue}</Text>
-          </Row>
-          <Row>
-            <Text startIcon={faUserGroup} style={{ marginRight: '2rem' }}>
-              {capacity} people
-            </Text>
-            <Text startIcon={faDollarSign}>&#36;{price}</Text>
-          </Row>
-          <Row style={{ display: 'block' }}>
-            {(description as string).split(/\n+/).map((paragraph, index) => (
-              <Paragraph key={index}>{paragraph}</Paragraph>
-            ))}
-          </Row>
-        </Column>
-      </Row>
-    </Layout>
+              <Text startIcon={faDollarSign}>&#36;{price}</Text>
+            </Row>
+            <Row style={{ display: 'block' }}>
+              {(description as string).split(/\n+/).map((paragraph, index) => (
+                <Paragraph key={index}>{paragraph}</Paragraph>
+              ))}
+            </Row>
+          </Column>
+        </Row>
+      </Layout>
+    </>
   )
 }
 

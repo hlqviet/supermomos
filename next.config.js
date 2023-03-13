@@ -1,4 +1,8 @@
 module.exports = {
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en'
+  },
   images: {
     remotePatterns: [
       {
@@ -9,5 +13,14 @@ module.exports = {
       }
     ],
     unoptimized: true
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/socials/create',
+        permanent: true
+      }
+    ]
   }
 }
